@@ -1,0 +1,21 @@
+/* Login page background */
+.loginPage {
+  height: 100vh;
+  background: linear-gradient(to right, rgb(138, 138, 242), rgb(189, 114, 242), rgb(245, 188, 245));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Register button inside login */
+.MuiButton-outlined {
+  color: #4a148c;
+  border-color: #7b1fa2;
+  background-color: #f3e5f5;
+  transition: 0.3s ease;
+}
+
+.MuiButton-outlined:hover {
+  background-color: #e1bee7;
+  border-color: #6a1b9a;
+}

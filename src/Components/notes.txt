@@ -1,0 +1,7 @@
+1) create login screen
+2) created register screen
+3) created the Homepage as Navabar name
+4) just the thing is misbehaving is when i logged in => if i refresh the page its log out automatically
+    =>solution for this is : use the local storage to store the isloggedIn state or other states because the state is resets to
+    its default after we refresh the page
+

@@ -1,0 +1,55 @@
+.NavBarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #2777ef;
+  padding: 12px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.NavCenter {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.NavRight {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-link {
+  text-decoration: none;
+  color: rgb(248, 245, 245);
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffd54f;
+  text-decoration: underline;
+}
+
+.logOutButton {
+  background-color: #dc3545 !important;
+  color: white !important;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.logOutButton:hover {
+  background-color: #7b050f !important;
+}
+
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}

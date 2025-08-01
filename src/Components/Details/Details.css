@@ -1,0 +1,91 @@
+/* Center the card vertically and horizontally */
+.NewTeacher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  padding: 20px;
+}
+
+/* Card styles */
+.card {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Header style */
+.card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Input and select styling */
+.card input,
+.card select {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Button styling */
+.card button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.card button:hover {
+  background-color: #0056b3;
+}
+
+/* Optional: form labels inline */
+.card label {
+  font-weight: 500;
+  margin-bottom: 4px;
+  display: block;
+  color: #444;
+}
+
+
+.TeacherDetails{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 10px ;
+padding: 20px;
+height: 50vh;
+}
+
+.TeacherDetails button{
+  background-color: rgb(171, 245, 175);
+  margin: 20%;
+font-size: 20px;
+}
+
+.clickable{
+cursor: pointer; 
+}
+
+body, h1, h2, h3, p, ul {
+  margin: 0;
+  padding: 0;
+}
