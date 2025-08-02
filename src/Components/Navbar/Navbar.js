@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Typography, useMediaQuery, Box, IconButton, Drawer, List, ListItem, ListItemText, Divider } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -13,6 +13,13 @@ export default function Navbar({ formData, setFormData, setIsLoggedIn }) {
 
     const handleDrawerOpen = () => setDrawerOpen(true);
     const handleDrawerClose = () => setDrawerOpen(false);
+
+    const handleformData = () => {
+        localStorage.removeItem("login");
+        setFormData({ email: '', password: '' });
+        setIsLoggedIn(false);
+    }
+
 
     return (
         <div className="NavBarContainer">
@@ -74,8 +81,8 @@ export default function Navbar({ formData, setFormData, setIsLoggedIn }) {
                                         variant="contained"
                                         fullWidth
                                         onClick={() => {
-                                            setFormData({ email: '', password: '' });
-                                            setIsLoggedIn(false);
+
+                                            handleformData();
                                         }}
                                     >
                                         Sign Out
@@ -118,8 +125,7 @@ export default function Navbar({ formData, setFormData, setIsLoggedIn }) {
                                 className="logOutButton"
                                 variant="contained"
                                 onClick={() => {
-                                    setFormData({ email: '', password: '' });
-                                    setIsLoggedIn(false);
+                                    handleformData();
                                 }}
                                 sx={{ marginRight: 2 }}
                             >

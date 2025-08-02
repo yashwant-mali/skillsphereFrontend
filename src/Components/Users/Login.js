@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
     Box,
     Button,
@@ -28,13 +28,17 @@ export default function Login({ onFormChange }) {
             ...prevData,
             [name]: value
         }));
+
     };
 
-    const handleSubmit =  (e) => {
+    //this method is setting localStorage item to loggedIn when the user logs in
+    //and forcely reloading the page because of setLogin state issue its not working here
+    const handleSubmit = (e) => {
         e.preventDefault();
         // console.log(formData.email, formData.password);
+        localStorage.setItem("login", "loggedIn");
         onFormChange(formData);
-
+        window.location.reload(); // This will reload the page
 
     };
 
@@ -48,7 +52,7 @@ export default function Login({ onFormChange }) {
                 <Paper elevation={6} sx={{ padding: 4, borderRadius: 3 }}>
                     <form onSubmit={handleSubmit}>
                         <Typography variant="h4" align="center" gutterBottom>
-                            LOG IN
+                            SIGN IN
                         </Typography>
                         <Stack spacing={3}>
                             <TextField
@@ -72,7 +76,7 @@ export default function Login({ onFormChange }) {
                                 Submit
                             </Button>
                             <Typography align="center">
-                                Not registered yet?{' '}
+                                Not Registered Yet?{' '}
                                 <Button onClick={handleRegister} variant="outlined" size="small">
                                     Register Now
                                 </Button>

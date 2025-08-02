@@ -27,11 +27,21 @@ function App() {
   const [userData, setUserData] = useState({ name: '', email: '', dob: '', gender: '', country: '', password: '' });
 
 
+  // useEffect(() => {
+  //   // changing this for temp  correct is -> setIsLoggedIn(!!formData.email && !!formData.password);
+  //   setIsLoggedIn(formData.email && formData.password);
+  //   // console.log(formData.email, formData.password + " from app now");
+  // }, [formData]);
+
+
+  //this useeffect is to check if the user is logged in when the app loads
+  // if the user is logged in then setIsLoggedIn to true
   useEffect(() => {
-    // changing this for temp  correct is -> setIsLoggedIn(!!formData.email && !!formData.password);
-    setIsLoggedIn(!formData.email && !formData.password);
-    // console.log(formData.email, formData.password + " from app now");
-  }, [formData]);
+    if (localStorage.getItem("login") === "loggedIn") {
+      setIsLoggedIn(true);
+    }
+  }, [isLoggedIn]);
+
 
   const updateFormData = ({ email, password }) => setFormData({ email, password });
   const updateRegisterUserData = user => setUserData(user);
