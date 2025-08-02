@@ -39,8 +39,8 @@ export default function SkillList() {
 
 
     return (
-        <Box sx={{ p: 3 }}>
-            <Typography variant="h4" sx={{ mb: 4, color: theme.palette.primary.main, textAlign: 'center' }}>
+        <Box sx={{ p: 3 }} >
+            <Typography variant="h4" sx={{  mb: 4, color: theme.palette.primary.main, textAlign: 'center' }}>
                 {skillType} Skills
             </Typography>
 

@@ -29,7 +29,7 @@ function App() {
 
   useEffect(() => {
     // changing this for temp  correct is -> setIsLoggedIn(!!formData.email && !!formData.password);
-    setIsLoggedIn(formData.email && formData.password);
+    setIsLoggedIn(!formData.email && !formData.password);
     // console.log(formData.email, formData.password + " from app now");
   }, [formData]);
 

@@ -8,7 +8,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const apiSlice = createApi({
     reducerPath: 'api',
     // after backend deployment we are using this forllowing base URL
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://skillspherebackend.onrender.com' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001' }),
 
     endpoints: (builder) => ({
         getRegisteredUsers: builder.query({

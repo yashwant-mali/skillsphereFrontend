@@ -47,8 +47,8 @@ export default function Advertisement() {
             py: 4, bgcolor: '#fafafa', width: '100%', background: 'linear-gradient(to right, #e0f7fa, #fce4ec)',
             backgroundAttachment: 'fixed',
         }}>
-            <Typography variant="h4" align="center" sx={{ mb: 3, color: '#1976d2' }}>
-                Advertisements
+            <Typography variant="h4" align="center" sx={{ mb: 3, color: '#080808ff' }}>
+                <span style={{ textDecoration: 'underline' }}>Advertisements</span>
             </Typography>
             <Box
                 ref={carouselRef}

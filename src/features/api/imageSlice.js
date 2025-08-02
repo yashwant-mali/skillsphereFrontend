@@ -7,7 +7,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const imageSlice = createApi({
     reducerPath: 'image',
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://skillspherebackend.onrender.com' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001' }),
     endpoints: (builder) => ({
         getImages: builder.query({
             query: () => '/images',

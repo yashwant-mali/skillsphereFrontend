@@ -10,28 +10,27 @@ import { CssBaseline, Box } from '@mui/material';
 
 
 export default function Home({ isLoggedIn }) {
-
     const { data: images } = useGetImagesQuery();
 
-    const sports = images?.filter((sport) => sport.ImageType === 'sports');
-    const dance = images?.filter((sport) => sport.ImageType === 'dance');
-    const music = images?.filter((sport) => sport.ImageType === 'music');
-
-
+    // Get unique skill types from images
+    const skillTypes = images ? [...new Set(images.map(img => img.ImageType))] : [];
 
     return (
         <div>
-            {
-                isLoggedIn && (
-                    <Box sx={{ px: 2, py: 4 }}>
-                        <Box sx={{ mb: 4 }}><Advertisement /></Box>
-                        <Box sx={{ mb: 4 }}><SelectSkill /></Box>
-                        <Box sx={{ mb: 4 }}><Skill title="Sports" photos={sports} /></Box>
-                        <Box sx={{ mb: 4 }}><Skill title="Dance" photos={dance} /></Box>
-                        <Box sx={{ mb: 4 }}><Skill title="Song" photos={music} /></Box>
-                    </Box>
-                )
-            }
-        </div >
-    )
+            {isLoggedIn && (
+                <Box sx={{ px: 0, py: 0 }}>
+                    <Box sx={{ mb: 4 }}><Advertisement /></Box>
+                    <Box sx={{ mb: 4 }}><SelectSkill /></Box>
+                    {skillTypes.map((type) => (
+                        <Box sx={{ mb: 4 }} key={type}>
+                            <Skill
+                                title={type.charAt(0).toUpperCase() + type.slice(1)}
+                                photos={images.filter(img => img.ImageType === type)}
+                            />
+                        </Box>
+                    ))}
+                </Box>
+            )}
+        </div>
+    );
 }
