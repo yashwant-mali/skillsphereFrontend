@@ -84,7 +84,7 @@ const Info = () => {
         </Paper>
       </Container>
 
-      {/* Footer-style Contact Us Bar */}
+      {/* Sticky Footer-style Contact Us Bar */}
       <Box
         sx={{
           width: '100%',
@@ -96,6 +96,10 @@ const Info = () => {
           justifyContent: 'space-between',
           alignItems: 'center',
           flexWrap: 'wrap',
+          position: 'fixed',
+          left: 0,
+          bottom: 0,
+          zIndex: 1300,
         }}
       >
         <Box display="flex" alignItems="center" gap={1}>

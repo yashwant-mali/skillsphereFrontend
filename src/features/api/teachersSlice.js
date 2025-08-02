@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 //localhost url
 //'http://localhost:3001'
-
+// 'https://skillspherebackend.onrender.com'
 
 export const teachersSlice = createApi({
     reducerPath: 'teachers',

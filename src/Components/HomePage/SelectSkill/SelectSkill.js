@@ -19,8 +19,8 @@ export default function SelectSkill() {
 
     return (
         <Box sx={{ mt: 5 }}>
-            <Typography variant="h4" align="center" sx={{ mb: 3, color: "#1565c0" }}>
-                Learn New Skill Today
+            <Typography variant="h4" align="center" sx={{ mb: 3, color: "#0a0a0aff" }}>
+                <span style={{ textDecoration: 'underline' }}>Learn New Skill Today</span>
             </Typography>
             <Box
                 sx={{
@@ -36,6 +36,7 @@ export default function SelectSkill() {
                     gap: 2,
                     borderRadius: 4,
                     boxShadow: 2,
+
                 }}
             >
                 {skillType.map((skill, index) => (
@@ -56,7 +57,8 @@ export default function SelectSkill() {
                                 backgroundColor: "#3949ab",
                                 transform: "translateY(-2px) scale(1.05)",
                                 boxShadow: "0 8px 16px rgba(0,0,0,0.3)"
-                            }
+                            },
+                            border: `2px solid black`,
                         }}
                     >
                         {skill}

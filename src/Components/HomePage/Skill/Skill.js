@@ -19,8 +19,11 @@ export default function Skill({ title, photos = [] }) {
 
     return (
         <Box sx={{ mb: 6, px: 2 }}>
-            <Typography variant="h4" sx={{ mx: 2, textAlign: "center", color: theme.palette.primary.main }}>
-                {title}
+            <Typography variant="h4" sx={{
+                mx: 2, mb: 2, textAlign: "center",
+                // color: theme.palette.primary.main 
+            }}>
+                <span style={{ textDecoration: 'underline' }}>{title}</span>
             </Typography>
             <Box
                 sx={{
@@ -29,8 +32,16 @@ export default function Skill({ title, photos = [] }) {
                     gap: 3,
                     pb: 1,
                     scrollBehavior: "smooth",
-                    "&::-webkit-scrollbar": { display: "none" },
+                    "&::-webkit-scrollbar": { height: 8, background: "#eee" },
+                    "&::-webkit-scrollbar-thumb": { background: theme.palette.divider, borderRadius: 4 },
+                    whiteSpace: "nowrap",
                 }}
+            // onWheel={e => {
+            //     if (e.deltaY !== 0) {
+            //         e.currentTarget.scrollLeft += e.deltaY;
+            //         e.preventDefault();
+            //     }
+            // }}
             >
                 {photos.map((photo, idx) => (
                     <Card
@@ -47,7 +58,8 @@ export default function Skill({ title, photos = [] }) {
                                 transform: "scale(1.05)",
                                 borderColor: theme.palette.primary.main,
                             },
-                            border: `2px solid ${theme.palette.divider}`,
+                            border: `2px solid black`,
+                            display: "inline-block",
                         }}
                     >
                         <CardMedia
@@ -66,11 +78,15 @@ export default function Skill({ title, photos = [] }) {
                     </Card>
                 ))}
 
-                <img className="clickable" style={{ height: '100px', margin: '40px' }} src="/images/svgs/addMoreSmall.png" alt="add more" onClick={() => navigate('/newSkill')} />
+                <img
+                    className="clickable"
+                    style={{ height: '70px', margin: '50px', display: 'inline-block' }}
+                    src="/images/svgs/addMoreSmall.png"
+                    alt="add more"
+                    onClick={() => navigate('/newSkill')}
+                />
 
             </Box>
-
-
         </Box>
     );
 }
