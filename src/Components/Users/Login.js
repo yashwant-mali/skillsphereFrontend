@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import {
     Box,
     Button,
@@ -18,8 +18,6 @@ export default function Login({ onFormChange }) {
         password: ''
     });
 
-    const { data: users, isLoading, isError, error } = useGetRegisteredUsersQuery();
-
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -28,18 +26,13 @@ export default function Login({ onFormChange }) {
             ...prevData,
             [name]: value
         }));
-
     };
 
-    //this method is setting localStorage item to loggedIn when the user logs in
-    //and forcely reloading the page because of setLogin state issue its not working here
     const handleSubmit = (e) => {
         e.preventDefault();
-        // console.log(formData.email, formData.password);
         localStorage.setItem("login", "loggedIn");
         onFormChange(formData);
-        window.location.reload(); // This will reload the page
-
+        window.location.reload();
     };
 
     const handleRegister = () => {
@@ -47,9 +40,49 @@ export default function Login({ onFormChange }) {
     };
 
     return (
-        <Box className="loginPage">
-            <Container maxWidth="sm">
-                <Paper elevation={6} sx={{ padding: 4, borderRadius: 3 }}>
+        <Box
+            className="loginPage"
+            sx={{
+                minHeight: '100vh',
+                backgroundColor: '#e3f2fd', // <-- light blue background
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+            }}
+        >
+            <Box
+                sx={{
+                    mb: 3,
+                    px: 2,
+                    py: 1,
+                    bgcolor: 'white',
+                    borderRadius: 2,
+                    boxShadow: 2,
+                    width: { xs: '90vw', sm: '400px', md: '500px' },
+                    textAlign: 'center',
+                }}
+            >
+                <Typography variant="body2">
+                    Any Email Id with Any Password will be accepted—authentication is <b>off</b> for now for easy access.
+                </Typography>
+            </Box>
+            <Container
+                maxWidth="xs"
+                disableGutters
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                }}
+            >
+                <Paper
+                    elevation={6}
+                    sx={{
+                        padding: { xs: 2, sm: 4 },
+                        borderRadius: 3,
+                        width: { xs: '90vw', sm: '400px', md: '450px' },
+                    }}
+                >
                     <form onSubmit={handleSubmit}>
                         <Typography variant="h4" align="center" gutterBottom>
                             SIGN IN
@@ -62,6 +95,7 @@ export default function Login({ onFormChange }) {
                                 onChange={handleChange}
                                 fullWidth
                                 required
+                                autoComplete="email"
                             />
                             <TextField
                                 label="Password"
@@ -71,8 +105,9 @@ export default function Login({ onFormChange }) {
                                 onChange={handleChange}
                                 fullWidth
                                 required
+                                autoComplete="current-password"
                             />
-                            <Button variant="contained" type="submit" color="success">
+                            <Button variant="contained" type="submit" color="success" fullWidth>
                                 Submit
                             </Button>
                             <Typography align="center">
