@@ -48,7 +48,13 @@ export default function Teacher({ name }) {
                             {filteredTeachers.map((e, index) => (
                                 <tr key={index} onClick={() => handleClick(e)} className='clickable'>
                                     <td style={{ border: '1px solid #ccc', padding: '8px' }}>{index + 1}</td>
-                                    <td style={{ border: '1px solid #ccc', padding: '8px' }}>{e.Institute}</td>
+                                    <td style={{
+                                        border: '1px solid #ccc',
+                                        padding: '8px',
+                                        color: 'blue',
+                                        textDecoration: 'underline',
+                                        cursor: 'pointer',
+                                    }}>{e.Institute}</td>
                                     <td style={{ border: '1px solid #ccc', padding: '8px' }}>{e.Address}</td>
                                     <td style={{ border: '1px solid #ccc', padding: '8px' }}>{e.Country}</td>
                                     <td style={{ border: '1px solid #ccc', padding: '8px' }}>{e.PeriodInMonths}</td>
