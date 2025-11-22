@@ -3,12 +3,12 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 //localhost url
 //'http://localhost:3001'
-
-
+//'https://skillspherebackend.onrender.com'
+//https://skillsphere-backend-mu.vercel.app
 export const apiSlice = createApi({
     reducerPath: 'api',
     // after backend deployment we are using this forllowing base URL
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://skillspherebackend.onrender.com' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'https://skillsphere-backend-mu.vercel.app' }),
 
     endpoints: (builder) => ({
         getRegisteredUsers: builder.query({
