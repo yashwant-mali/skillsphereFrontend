@@ -18,6 +18,8 @@ export default function Home({ isLoggedIn }) {
         ? [...new Set(images.map(img => img.ImageType))]
         : [];
 
+    if (!isLoggedIn) return null;
+
     if (isLoading || isFetching) {
         return (
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', p: 6, flexDirection: 'column', gap: '20px' }}>
